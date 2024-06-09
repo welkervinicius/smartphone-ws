@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "ws": "^7.4.5"
+  },
+  "scripts": {
+    "start": "node server.js"
   }
 }
