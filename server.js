@@ -1,8 +1,10 @@
 const WebSocket = require('ws');
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 8080;
-const RTC = new WebSocket.Server({ port });
+const express = require('express');
+const http = require('http');
+const app = express();
+const server = http.createServer(app);
+const port = 32145;
+const RTC = new WebSocket.Server({ server });
 
 RTC.on('listening', () => {
   console.log('Listening at port', port);
@@ -51,4 +53,8 @@ RTC.on('connection', (socket, request) => {
       console.log(`WebSocket ${socket.id} disconnected`);
     }
   });
+});
+
+server.listen(port, () => {
+  console.log(`Server is listening on ${port}`);
 });
