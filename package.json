@@ -1,8 +1,14 @@
 {
-  "dependencies": {
-    "ws": "^7.4.5"
-  },
+  "name": "websocket-server",
+  "version": "1.0.0",
+  "description": "A WebSocket server using ws, express, and http",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "ws": "^8.0.0"
   }
 }
